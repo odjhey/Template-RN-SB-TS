@@ -23,4 +23,14 @@ export const RootStoreBase = MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new BookModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
+    mutateCreateBook(variables: { title: string | undefined, author: string | undefined }, resultSelector: string | ((qb: BookModelSelector) => BookModelSelector) = bookModelPrimitives.toString(), optimisticUpdate?: () => void) {
+      return self.mutate<{ createBook: BookModelType}>(`mutation createBook($title: String, $author: String) { createBook(title: $title, author: $author) {
+        ${typeof resultSelector === "function" ? resultSelector(new BookModelSelector()).toString() : resultSelector}
+      } }`, variables, optimisticUpdate)
+    },
+    mutateUpdateBook(variables: { id: string | undefined, title: string | undefined, author: string | undefined }, resultSelector: string | ((qb: BookModelSelector) => BookModelSelector) = bookModelPrimitives.toString(), optimisticUpdate?: () => void) {
+      return self.mutate<{ updateBook: BookModelType}>(`mutation updateBook($id: ID, $title: String, $author: String) { updateBook(id: $id, title: $title, author: $author) {
+        ${typeof resultSelector === "function" ? resultSelector(new BookModelSelector()).toString() : resultSelector}
+      } }`, variables, optimisticUpdate)
+    },
   }))
