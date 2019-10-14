@@ -14,15 +14,26 @@
   },
   "config": {
     "react-native-storybook-loader": {
-      "searchDir": ["./storybook/stories"],
-      "pattern": "**/*.story.tsx", 
+      "searchDir": [
+        "./storybook/stories"
+      ],
+      "pattern": "**/*.story.tsx",
       "outputFile": "./storybook/storyLoader.js"
     }
   },
   "dependencies": {
     "@storybook/react-native": "5.2.3",
+    "components": "^0.1.0",
+    "graphql": "^14.5.8",
+    "graphql-request": "^1.8.2",
+    "graphql-tag": "^2.10.1",
+    "mobx": "^5.14.0",
+    "mobx-react": "^6.1.3",
+    "mobx-state-tree": "^3.14.1",
     "moment": "^2.24.0",
-    "react": "*",
+    "mst-gql": "^0.6.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-native": ">=0.57.0",
     "react-native-config": "https://github.com/luggit/react-native-config",
     "react-native-elements": "^1.2.6",
